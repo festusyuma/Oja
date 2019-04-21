@@ -1,0 +1,39 @@
+<ion-header>
+    <ion-navbar color="header">
+        <button ion-button menuToggle>
+      <ion-icon name="menu">
+      </ion-icon>
+    </button>
+        <ion-buttons end>
+
+            <button ion-button icon-only light class="has-icon icon-only has-badge" (click)="GoChart()">
+                    <ion-badge *ngIf="cart_arr.length">{{cart_arr.length}}</ion-badge>
+                <ion-icon class="ion-ios-cart-outline item-icon" color="redlite">
+                </ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+
+
+</ion-header>
+
+<ion-content class="card-background-page">
+
+
+
+
+
+    <div *ngIf="card_arr && card_arr.length">
+        <div *ngFor="let category of card_arr">
+            <ion-card (click)="goSubCat(category.item)">
+                <img src="https://hinzappz.com/OJA/testing/uploads/{{category.img}}" />
+                <div color="yellow" class="card-title">{{category.text1}}</div>
+            </ion-card>
+        </div>
+
+
+
+
+
+    </div>
+</ion-content>

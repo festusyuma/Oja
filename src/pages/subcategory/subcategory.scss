@@ -1,0 +1,37 @@
+ion-searchbar {
+    .searchbar-input-container {
+        .searchbar-input {
+            border-radius: 20px;
+            border: 1px solid rgb(230, 179, 13);
+            box-shadow: none !important;
+            height: 50%;
+            bottom: 15px;
+        }
+    }
+}
+
+.card-background-page {
+    ion-card {
+        position: relative;
+        text-align: center;
+        margin: 0px;
+    }
+    .card-title {
+        position: absolute;
+        top: 36%;
+        font-size: 1.2em;
+        width: 100%;
+        font-weight: bold;
+        color: rgb(230, 179, 13);
+    }
+    .card {
+        margin: 0 !important;
+        width: 100%;
+        box-shadow: none !important;
+    }
+    .sub {
+        margin: 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+}

@@ -1,0 +1,62 @@
+<ion-header>
+
+    <ion-navbar>
+        <button ion-button menuToggle>              
+          <ion-icon name="menu" class="menubutton1"></ion-icon>
+       </button>
+        <ion-title class="title" color="primary"></ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="GoChart()">
+           <ion-badge *ngIf="cart_arr.length">{{cart_arr.length}}</ion-badge>
+            <ion-icon class="ion-ios-cart-outline item-icon">
+            </ion-icon>
+        </button>
+        </ion-buttons>
+        <ion-searchbar [(ngModel)]="terms"></ion-searchbar>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="card-background-page">
+    <ion-card class="slider">
+        <ion-slides loop="true" autoplay="3000" pager>
+            <ion-slide *ngFor="let number of [1,2,3,4]">
+                <img src="../assets/imgs/{{number}}.jpg" />
+            </ion-slide>
+
+        </ion-slides>
+    </ion-card>
+
+    <div>
+        <ion-item>
+            <b>Available Stores</b>
+        </ion-item>
+    </div>
+
+
+    <!-- <div>
+        <ion-card (click)="goSuper()">
+            <img src="../../assets/imgs/supermarket.jpg">
+            <div class="card-title">Babcock Super Store </div>
+        </ion-card>
+        <ion-card (click)="goGuest()">
+            <img src="../../assets/imgs/Guest.jpg">
+            <div class="card-title">Guest House</div>
+        </ion-card>
+
+    </div> -->
+
+    <div *ngIf="card_arr && card_arr.length">
+        <div *ngFor="let shop of card_arr">
+            <ion-card (click)="goShop(shop.sid)">
+                <img src="https://hinzappz.com/OJA/testing/uploads/{{shop.img_shop}}" />
+                <div class="card-title">{{shop.shop}}</div>
+            </ion-card>
+        </div>
+
+    </div>
+
+
+
+</ion-content>

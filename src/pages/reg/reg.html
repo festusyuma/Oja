@@ -1,0 +1,48 @@
+<ion-header no-border>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button>
+                <ion-icon class="arrow-back"></ion-icon>
+            </ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+    <ion-navbar transparent>
+    </ion-navbar>
+</ion-header>
+<ion-content padding class="transparent-header">
+
+    <div class="login-container">
+        <img class="logo" src="assets/imgs/Logo-login.png" />
+        <form [formGroup]="formgroup">
+            <div class="list-form">
+                <ion-item>
+                    <ion-input type="text" [(ngModel)]="m_info.name" placeholder="Username" formControlName="m_name"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-input type="email" name="email" [(ngModel)]="m_info.email" placeholder="Email" formControlName="m_email"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-input type="password" [(ngModel)]="m_info.pass" placeholder="Password" formControlName="m_pass"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-input type="password" [(ngModel)]="m_info.repass" placeholder="Repeat Password" formControlName="m_repass"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-input type="text" [(ngModel)]="m_info.phone" placeholder="Phone Number" formControlName="m_phone"></ion-input>
+                </ion-item>
+
+                <button ion-button margin round color="yellow" (click)="register()">Sign Up</button>
+
+
+            </div>
+        </form>
+    </div>
+</ion-content>
+<ion-footer>
+    <ion-toolbar class="footer" transparent>
+        <div class="footer-content" tappable (click)="login()">
+            <span ion-text>I have an account. Sign In</span>
+        </div>
+    </ion-toolbar>
+</ion-footer>

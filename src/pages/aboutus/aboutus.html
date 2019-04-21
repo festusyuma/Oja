@@ -1,0 +1,60 @@
+<!--
+  Generated template for the AboutusPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+      <button ion-button menuToggle >              
+          <ion-icon name="menu" class="menubutton1" ></ion-icon>
+        </button>
+    <ion-title>About OJA</ion-title>
+
+    <ion-buttons end>
+        <button ion-button (click)="GoChart()">
+           <ion-badge *ngIf="cart_arr.length">{{cart_arr.length}}</ion-badge>
+            <ion-icon name="basket" class="menubutton2">
+            </ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <p>
+    OJA is an E-commerce company, offering a third-party
+    online market platform for supermarkets and
+    restaurants to provide their products and services
+    to consumers. 
+  </p>
+  <p>
+    OJA offers a solution to the widespread issue of poor accessibility to
+    food and resources demanded by university students, primarily in
+    Nigeria. 
+  </p>
+
+<p>
+    As a solution to this problem, OJA connects customers to
+    supermarkets and restaurants in close proximity, via a third party app
+    that provides an efficient ordering service at minimal cost to both
+    parties involved (University students and Restaurants/Supermarkets).
+  </p>
+
+  <p>
+    The OJA app will be launched in Babcock University, a viable market
+    that offers immense growth opportunities for both OJA and users of
+    the app. After a successful launch and understudy of the market
+    through monitoring feedback and responsiveness of the app, 
+    the E-commerce platform will be made available to other institutions
+    nationwide, with tailored services offered to each institution
+    depending on specific consumer demand from the market.
+  </p><br/>
+  
+
+
+</ion-content>

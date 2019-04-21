@@ -1,0 +1,26 @@
+<ion-menu [content]="content" id="menu-dark" type="reveal">
+    <ion-header class="sidemenuheader">
+        <ion-toolbar>
+            <ion-avatar item-left>
+                <img src="../assets/imgs/HomepageLogo.png">
+            </ion-avatar>
+        </ion-toolbar>
+    </ion-header>
+
+    <div *ngIf="showSplash">
+        <div class="spinner"></div>
+    </div>
+
+
+    <ion-content class="menu">
+        <ion-list>
+            <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        {{p.title}}
+        <ion-icon [name]="p.icon" item-left></ion-icon>
+      </button>
+        </ion-list>
+    </ion-content>
+
+
+    <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+    <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

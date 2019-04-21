@@ -1,0 +1,78 @@
+    page-login {
+        .transparent-header {
+            background-color: #fff;
+            &::after {
+                content: "";
+                background: url("../assets/imgs/backgroundlogo.jpg") no-repeat;
+                background-size: cover;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                position: absolute;
+                z-index: 0;
+            }
+            .scroll-content {
+                margin-top: 0 !important;
+            }
+            .logo {
+                width: 50%;
+                height: auto;
+                padding-top: 9vh;
+                margin-bottom: 15vh;
+            }
+            span {
+                color: white;
+            }
+            ion-item {
+                color: rgb(54, 54, 54) !important;
+                padding-left: 10px !important;
+                margin-bottom: 10px;
+                right: 15px;
+                background-color: transparent !important;
+                font-size: 0.9em;
+            }
+            ion-input {
+                color: rgb(54, 54, 54);
+                background-color: rgba(250, 192, 2, 0.158);
+                border-radius: 50px;
+            }
+             ::-webkit-input-placeholder {
+                color: rgb(54, 54, 54) !important;
+            }
+            .login-container {
+                color: rgb(54, 54, 54);
+                position: absolute;
+                top: 0;
+                padding: 10vw;
+                text-align: center;
+                width: 100%;
+                margin: 0 auto;
+                z-index: 2;
+            }
+            button {
+                box-shadow: none;
+            }
+            .button {
+                right: 17px;
+            }
+            ion-footer {
+                height: 47px;
+                color: rgb(54, 54, 54);
+            }
+            .footer-content {
+                text-align: center;
+            }
+            .footer {
+                min-height: 47px;
+            }
+            .footer-md::before {
+                border-top: 1px solid rgb(250, 192, 2);
+                background-image: none;
+            }
+        }
+        .item-inner {
+            border-bottom-color: transparent !important;
+            box-shadow: none !important;
+        }
+    }

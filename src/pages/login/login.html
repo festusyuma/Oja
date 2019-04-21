@@ -1,0 +1,37 @@
+<ion-header no-border>
+    <ion-navbar transparent>
+    </ion-navbar>
+</ion-header>
+<ion-content padding class="transparent-header">
+
+    <div class="login-container">
+        <img class="logo" src="assets/imgs/Logo-login.png" />
+        <div>
+            <ion-item>
+                <ion-input type="email" placeholder="Email" [(ngModel)]="m_info.email"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-input type="password" placeholder="Password" [(ngModel)]="m_pass"></ion-input>
+            </ion-item>
+       
+
+            <ion-item>
+                <ion-label>Remember Me?</ion-label>
+                <ion-checkbox [(ngModel)]="issavepass" (click)="savePass()"></ion-checkbox>
+              </ion-item>
+
+
+
+            <button ion-button margin round color="yellow" (click)="login()">LOGIN</button>
+            <p tappable (click)="forgotPass()"><strong>Forgot your password?</strong></p>
+
+        </div>
+    </div>
+</ion-content>
+<ion-footer>
+    <ion-toolbar class="footer" transparent>
+        <div class="footer-content" tappable (click)="reg()">
+            <span>Don't have an account? <strong>Sign up here</strong>.</span>
+        </div>
+    </ion-toolbar>
+</ion-footer>

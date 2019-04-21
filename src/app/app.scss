@@ -1,0 +1,81 @@
+            // http://ionicframework.com/docs/theming/
+            // App Global Sass
+            // --------------------------------------------------
+            // Put style rules here that you want to apply globally. These
+            // styles are for the entire app and not just one component.
+            // Additionally, this file can be also used as an entry point
+            // to import other Sass files to be included in the output CSS.
+            //
+            // Shared Sass variables, which can be used to adjust Ionic's
+            // default Sass variables, belong in "theme/variables.scss".
+            //
+            // To declare rules for a specific mode, create a child rule
+            // for the .md, .ios, or .wp mode classes. The mode class is
+            // automatically applied to the <body> element in the app.
+            ion-header {
+                .toolbar {
+                    //   position: absolute;
+                    .toolbar-background {
+                        background: transparent;
+                    }
+                    .toolbar-title {
+                        color: black;
+                    }
+                }
+            }
+            
+            #menu-dark {
+                .sidemenuHeader {
+                    ion-toolbar {
+                        .toolbar-background {
+                            background: $sidemenu_color;
+                            border: $sidemenu_color;
+                        }
+                        ion-buttons {
+                            button {
+                                color: #fff;
+                            }
+                        }
+                        .toolbar-content {
+                            ion-item {
+                                background: transparent;
+                                color: #fff;
+                                ion-avatar {
+                                    background: #fff;
+                                    color: $header_color;
+                                    border-radius: 50%;
+                                    text-align: center;
+                                }
+                            }
+                        }
+                    }
+                }
+                .spinner {
+                    width: 4em;
+                    height: 4em;
+                    background: #a1a2a1;
+                    border-radius: 50%;
+                    margin: 5em auto;
+                    border: .3em solid transparent;
+                    -webkit-animation: glow 1s ease infinite;
+                    -moz-animation: glow 1s ease infinite;
+                    -o-animation: glow 1s ease infinite;
+                    animation: glow 1s ease infinite;
+                }
+                @-webkit-keyframes glow {
+                    0% {
+                        box-shadow: 0 0 0 .4em #a1a2a1, 0 0 0 .1em #a1a2a1;
+                        -webkit-transform: rotate(360deg);
+                    }
+                    50% {
+                        border-top-color: #605556;
+                    }
+                    100% {
+                        box-shadow: 0 0 0 .4em #a1a2a1, 0 0 0 3.6em transparent;
+                    }
+                }
+                 ::-webkit-scrollbar,
+                *::-webkit-scrollbar {
+                    display: none;
+                }
+            }

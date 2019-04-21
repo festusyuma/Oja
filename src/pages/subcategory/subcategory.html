@@ -1,0 +1,65 @@
+<ion-header>
+    <ion-navbar color="header">
+        <button ion-button menuToggle>
+    <ion-icon name="menu">
+    </ion-icon>
+  </button>
+        <ion-buttons end>
+
+            <button ion-button icon-only light class="has-icon icon-only has-badge" (click)="GoChart()">
+                  <ion-badge *ngIf="cart_arr.length">{{cart_arr.length}}</ion-badge>
+              <ion-icon class="ion-ios-cart-outline item-icon" color="redlite">
+              </ion-icon>
+          </button>
+        </ion-buttons>
+        <ion-searchbar [(ngModel)]="terms"></ion-searchbar>
+    </ion-navbar>
+
+
+</ion-header>
+
+
+<ion-content class="card-background-page" padding>
+
+
+    <div *ngIf="row_slide && row_slide.length">
+        <div *ngFor="let slide of row_slide" class="card">
+            <ion-card><img src="https://hinzappz.com/OJA/testing/uploads/{{slide.img}}" /></ion-card>
+        </div>
+
+    </div>
+
+
+    <ion-grid *ngIf="row_arr && row_arr.length">
+        <ion-row *ngFor="let row of row_arr">
+            <ion-col *ngFor="let item of row | search : terms">
+
+                <ion-card *ngIf="item" (click)="goProduct(item.sid,item.parent,item.item)" class="sub">
+                    <ion-grid>
+
+                        <ion-row>
+                            <div> <img src="https://hinzappz.com/OJA/testing/uploads/{{item.img}}" /></div>
+                            <div class="card-title" start>
+                                {{item.text1}}
+                            </div>
+                        </ion-row>
+
+                        <ion-row>
+                            <ion-col>
+
+                            </ion-col>
+                        </ion-row>
+
+                    </ion-grid>
+
+                </ion-card>
+            </ion-col>
+        </ion-row>
+
+    </ion-grid>
+
+
+
+
+
+</ion-content>

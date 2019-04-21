@@ -1,0 +1,72 @@
+<!--
+  Generated template for the DetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+
+    <ion-navbar>
+        <button ion-button menuToggle>              
+          <ion-icon name="menu" class="menubutton1" ></ion-icon>
+       </button>
+        <ion-title>Product details</ion-title>
+
+
+        <ion-buttons end>
+            <button ion-button (click)="GoChart()">
+           <ion-badge *ngIf="cart_arr.length">{{cart_arr.length}}</ion-badge>
+            <ion-icon  class="ion-ios-cart-outline item-icon">
+            </ion-icon>
+        </button>
+        </ion-buttons>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <img src="https://hinzappz.com/OJA/img/{{item_arr.img}}" />
+        <ion-card-content>
+            <h2 class="card-title">
+                Title: {{item_arr.title}}
+            </h2>
+            <p>
+                Unit Price(NGN): {{item_arr.price | currency:'NGN':true:'1.0-2'}}
+            </p>
+        </ion-card-content>
+        <!-- <ion-list> -->
+        <ion-item *ngIf="stock_qty==0"> Out of Stock!! </ion-item>
+        <ion-item *ngIf="stock_qty!=0">
+            <ion-label>Quantity:</ion-label>
+            <ion-select [(ngModel)]="quantity" (ionChange)="recordQty(quantity)">
+                <ion-option *ngIf="stock_qty>=1" value="1">1</ion-option>
+                <ion-option *ngIf="stock_qty>=2" value="2">2</ion-option>
+                <ion-option *ngIf="stock_qty>=3" value="3">3</ion-option>
+                <ion-option *ngIf="stock_qty>=4" value="4">4</ion-option>
+                <ion-option *ngIf="stock_qty>=5" value="5">5</ion-option>
+                <ion-option *ngIf="stock_qty>=6" value="6">6</ion-option>
+                <ion-option *ngIf="stock_qty>=7" value="7">7</ion-option>
+                <ion-option *ngIf="stock_qty>=8" value="8">8</ion-option>
+                <ion-option *ngIf="stock_qty>=9" value="9">9</ion-option>
+                <ion-option *ngIf="stock_qty>=10" value="10">10</ion-option>
+            </ion-select>
+        </ion-item>
+
+        <ion-item>
+            <ion-button item-end>
+                <button *ngIf="stock_qty!=0" ion-button (click)="AddChart(item_arr)" color="yellow">Add to Cart</button>
+            </ion-button>
+        </ion-item>
+
+    </ion-card>
+
+    <ion-card>
+        <accordion>
+            <h6>Description: {{item_arr.discri}}</h6>
+        </accordion>
+
+    </ion-card>
+
+</ion-content>

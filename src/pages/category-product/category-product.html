@@ -1,0 +1,72 @@
+<ion-header>
+    <ion-navbar color="header">
+        <button ion-button menuToggle>
+            <ion-icon name="menu">
+            </ion-icon>
+        </button>
+        <ion-buttons end>
+
+            <button ion-button icon-only light class="has-icon icon-only has-badge" (click)="GoChart()">
+                <ion-icon class="ion-ios-cart-outline item-icon" color="redlite">
+                </ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-searchbar [(ngModel)]="terms"></ion-searchbar>
+    </ion-navbar>
+
+
+</ion-header>
+
+
+
+<ion-content padding>
+
+
+
+
+    <ion-grid *ngIf="row_arr && row_arr.length">
+        <ion-row *ngFor="let row of row_arr">
+            <ion-col *ngIf="row && row.length">
+
+                <ion-card *ngFor="let item of row | search : terms | sort: {property: column, order: order}" (click)="goDetail(item)">
+                    <ion-grid *ngIf="item">
+
+                        <ion-row>
+                            <div> <img src="https://hinzappz.com/OJA/img/{{item.img}}" /></div>
+                        </ion-row>
+
+                        <ion-row>
+                            <ion-col>
+                                <ion-list>
+
+
+                                    <h5>{{item.title}}</h5>
+                                    <h6>{{item.discri}}</h6>
+                                </ion-list>
+                            </ion-col>
+                        </ion-row>
+
+                    </ion-grid>
+
+                </ion-card>
+            </ion-col>
+        </ion-row>
+
+    </ion-grid>
+
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar class="footer" color="yellow">
+        <div>
+
+            <ion-buttons end>
+
+                <button ion-button icon-only light class="has-icon icon-only has-badge" (click)="sort()">
+                <ion-icon name="reorder" color="light">
+                </ion-icon>
+            </button>
+            </ion-buttons>
+        </div>
+    </ion-toolbar>
+</ion-footer>

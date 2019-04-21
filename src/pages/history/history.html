@@ -1,0 +1,63 @@
+<!--
+  Generated template for the HistoryPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar color="header_color">
+        <button ion-button menuToggle>
+
+            <ion-icon name="menu" class="menubutton1"></ion-icon>
+
+        </button>
+
+        <!-- <p align="middle" class="icon_logo">
+      <img src="./assets/imgs/logo_isaliyana.png"  height="80px" />    
+    </p> -->
+
+        <ion-buttons end>
+            <button ion-button (click)="GoChart()">
+                <ion-badge *ngIf="cart_arr.length">{{cart_arr.length}}</ion-badge>
+                <ion-icon class="ion-ios-cart-outline item-icon">
+                </ion-icon>
+            </button>
+        </ion-buttons>
+
+        <ion-title>Order History</ion-title>
+
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <timeline *ngIf="card_arr && card_arr.length" endIcon="call">
+        <timeline-item *ngFor="let carts of card_arr">
+            <div *ngFor="let item of carts"></div>
+            <ion-icon [name]="item.icon"></ion-icon>
+            <ion-card>
+                <ion-card-header>
+                    <h5>Order No: {{carts[0].reference}}</h5>
+                    <h5>Order Date: {{carts[0].orderdate}}</h5>
+                    <h5>Recipient: {{carts[0].recipient_name}}</h5>
+                    <h5>Shipping Address: {{carts[0].shipadd}}</h5>
+
+                </ion-card-header>
+                <ion-card-content>
+                    <ion-thumbnail item-start>
+                        <img src="https://hinzappz.com/OJA/img/{{item.img}}">
+                    </ion-thumbnail>
+                    <!-- <p>Order number:{{item.order_prefix}}{{item.oid}}</p> -->
+                    <p>Title:{{item.title}}</p>
+                    <p>Qty:{{item.qty}}, Unit Price: {{item.unitprice| currency:'NGN':true:'1.0-2'}}</p>
+                    <p>Total price: {{item.total| currency:'NGN':true:'1.0-2'}}</p>
+
+                </ion-card-content>
+            </ion-card>
+        </timeline-item>
+
+    </timeline>
+</ion-content>

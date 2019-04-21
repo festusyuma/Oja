@@ -1,0 +1,51 @@
+<ion-header>
+
+    <ion-navbar>
+        <button ion-button menuToggle>              
+          <ion-icon name="menu" class="menubutton1" ></ion-icon>
+       </button>
+        <ion-title>Super Market</ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="GoChart()">
+           <ion-badge *ngIf="cart_arr.length">{{cart_arr.length}}</ion-badge>
+            <ion-icon name="basket" class="menubutton2">
+            </ion-icon>
+        </button>
+        </ion-buttons>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-grid *ngIf="row_arr && row_arr.length">
+        <ion-row *ngFor="let row of row_arr">
+            <ion-col *ngFor="let item of row" (click)="goDetail(item)">
+
+                <ion-card>
+                    <ion-grid>
+
+                        <ion-row>
+                            <div> <img src="https://hinzappz.com/OJA/img/{{item.img}}" /></div>
+                        </ion-row>
+
+                        <ion-row>
+                            <ion-col>
+                                <h5>Title: {{item.title}}</h5>
+                                <h6>Description: {{item.discri}}</h6>
+
+                            </ion-col>
+                        </ion-row>
+
+                    </ion-grid>
+
+                </ion-card>
+            </ion-col>
+        </ion-row>
+
+    </ion-grid>
+
+
+
+</ion-content>
